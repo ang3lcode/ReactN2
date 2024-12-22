@@ -13,7 +13,7 @@ interface Pokemon {
 
 export default function PokemonList(props: { pokemons: Pokemon[] }) {
 	const { pokemons } = props;
-	// console.log('props--->', props);
+	console.log('props1--->', props);
 
 	return (
 		<FlatList
@@ -22,13 +22,14 @@ export default function PokemonList(props: { pokemons: Pokemon[] }) {
 			showsVerticalScrollIndicator={false}
 			keyExtractor={(pokemons) => String(pokemons.id)}
 			renderItem={({ item }) => <PokemonCard pokemon={item} />}
-			contentContainerStyle={styles.flatListContainer}
+			contentContainerStyle={styles.flatListContentContainer}
 		/>
 	)
 }
 
 const styles = StyleSheet.create({
-	flatListContainer: {
+	flatListContentContainer: {
 		paddingHorizontal: 5,
-	}
-})
+		top: 60,
+	},
+});

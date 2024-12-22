@@ -1,4 +1,4 @@
-import { View, Text, FlatList } from 'react-native'
+import { StyleSheet, View, Text, FlatList } from 'react-native'
 import React from 'react'
 
 interface Pokemon {
@@ -21,6 +21,13 @@ export default function PokemonList(props: { pokemons: Pokemon[] }) {
 			showsVerticalScrollIndicator={false}
 			keyExtractor={(pokemons) => String(pokemons.id)}
 			renderItem={({ item }) => <Text>{item.name}</Text>}
+			contentContainerStyle={styles.flatListContainer}
 		/>
 	)
 }
+
+const styles = StyleSheet.create({
+	flatListContainer: {
+		paddingHorizontal: 5,
+	}
+})

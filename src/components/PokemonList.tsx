@@ -1,0 +1,26 @@
+import { View, Text, FlatList } from 'react-native'
+import React from 'react'
+
+interface Pokemon {
+	id: number;
+	name: string;
+	type: string;
+	order: number;
+	imagen: string;
+}
+
+
+export default function PokemonList(props: { pokemons: Pokemon[] }) {
+	const { pokemons } = props;
+	console.log('props--->', props);
+
+	return (
+		<FlatList
+			data={pokemons}
+			numColumns={2}
+			showsVerticalScrollIndicator={false}
+			keyExtractor={(pokemons) => String(pokemons.id)}
+			renderItem={({ item }) => <Text>{item.name}</Text>}
+		/>
+	)
+}

@@ -1,5 +1,6 @@
 import { StyleSheet, View, Text, Image, TouchableWithoutFeedback } from 'react-native'
 import React from 'react'
+import getColorByPokemonType from '../utils/gerColorByPokemonType';
 
 interface Pokemon {
 	id: number;
@@ -11,8 +12,12 @@ interface Pokemon {
 
 export default function PokemonCard({ pokemon }: { pokemon: Pokemon }) {
 	const { name, type, order, imagen } = pokemon;
-	console.log('pokemon--->', pokemon);
+	// console.log('pokemon--->', pokemon);
+	// console.log('type--->', type);
+	const pokemonColor = getColorByPokemonType(type);
+	// console.log('pokemonColor--->', pokemonColor);
 
+	const bgstyles = { backgroundColor: pokemonColor, ...styles.bgStyles };
 
 	const goToPokemon = () => {
 		console.log(`Vamos al pokemon: ${name}`);
@@ -22,7 +27,7 @@ export default function PokemonCard({ pokemon }: { pokemon: Pokemon }) {
 		<TouchableWithoutFeedback onPress={goToPokemon}>
 			<View style={styles.card}>
 				<View style={styles.spacing}>
-					<View style={styles.bgStyles}>
+					<View style={bgstyles}>
 						<Text style={styles.number}>
 							#{`${order}`.padStart(3, '0')}
 						</Text>
@@ -45,15 +50,17 @@ const styles = StyleSheet.create({
 		flex: 1,
 		padding: 5,
 	},
-	bgStyles: {
-		backgroundColor: "grey",
-	},
 	number: {
 		position: "absolute",
 		right: 10,
 		top: 10,
 		color: "#fff",
 		fontSize: 11,
+	},
+	bgStyles: {
+		flex: 1,
+		borderRadius: 15,
+		padding: 10,
 	},
 	name: {
 		color: "#fff",

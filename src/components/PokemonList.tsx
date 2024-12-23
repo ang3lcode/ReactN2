@@ -1,4 +1,4 @@
-import { StyleSheet, View, Text, FlatList } from 'react-native'
+import { StyleSheet, View, Text, FlatList, SafeAreaView } from 'react-native'
 import React from 'react'
 import PokemonCard from './PokemonCard';
 
@@ -16,20 +16,26 @@ export default function PokemonList(props: { pokemons: Pokemon[] }) {
 	console.log('props1--->', props);
 
 	return (
-		<FlatList
-			data={pokemons}
-			numColumns={2}
-			showsVerticalScrollIndicator={false}
-			keyExtractor={(pokemons) => String(pokemons.id)}
-			renderItem={({ item }) => <PokemonCard pokemon={item} />}
-			contentContainerStyle={styles.flatListContentContainer}
-		/>
+		<SafeAreaView style={styles.saveArea}>
+			<FlatList
+				data={pokemons}
+				numColumns={2}
+				showsVerticalScrollIndicator={false}
+				keyExtractor={(pokemons) => String(pokemons.id)}
+				renderItem={({ item }) => <PokemonCard pokemon={item} />}
+				contentContainerStyle={styles.flatListContentContainer}
+			/>
+
+		</SafeAreaView>
 	)
 }
 
 const styles = StyleSheet.create({
 	flatListContentContainer: {
 		paddingHorizontal: 5,
-		top: 60,
+		// top: 40,
 	},
+	saveArea: {
+		marginTop: 40,
+	}
 });

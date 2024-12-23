@@ -1,6 +1,7 @@
 import { StyleSheet, View, Text, Image, TouchableWithoutFeedback } from 'react-native'
 import React from 'react'
 import getColorByPokemonType from '../utils/gerColorByPokemonType';
+import { capitalize } from 'lodash';
 
 interface Pokemon {
 	id: number;
@@ -31,7 +32,7 @@ export default function PokemonCard({ pokemon }: { pokemon: Pokemon }) {
 						<Text style={styles.number}>
 							#{`${order}`.padStart(3, '0')}
 						</Text>
-						<Text style={styles.name}>{pokemon.name}</Text>
+						<Text style={styles.name}>{capitalize(name)}</Text>
 						<Image source={{ uri: pokemon.imagen }} style={styles.image} />
 					</View>
 				</View>

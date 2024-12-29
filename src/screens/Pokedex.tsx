@@ -14,7 +14,8 @@ export default function Pokedex(): JSX.Element {
 
 
 	const [pokemons, setPokemons] = useState<Pokemon[]>([]); // Reemplaza "Pokemon" con el tipo adecuado
-	console.log("pokemons--->", pokemons);
+	// console.log("pokemons--->", pokemons);
+	const [nextUrl, setNextUrl] = useState<string | null>(null);
 
 	interface PokemonBasic {
 		name: string;
@@ -35,7 +36,6 @@ export default function Pokedex(): JSX.Element {
 		};
 	}
 
-
 	useEffect(() => {
 		(async () => {
 			await loadPokemons();
@@ -44,7 +44,10 @@ export default function Pokedex(): JSX.Element {
 
 	const loadPokemons = async (): Promise<void> => {
 		try {
-			const response = await getPokemonsAPI();
+			const response = await getPokemonsAPI(nextUrl || '');
+			setNextUrl(response.next);
+
+
 			const pokemonsArray = await Promise.all(
 				response.results.map(async (pokemon: PokemonBasic) => {
 					const pokemonDetails: PokemonDetails = await getPokemonDetailsByUrlApi(pokemon.url);
@@ -66,7 +69,7 @@ export default function Pokedex(): JSX.Element {
 
 	return (
 		<SafeAreaView>
-			<PokemonList pokemons={pokemons} />
+			<PokemonList pokemons={pokemons} loadPokemons={loadPokemons} isNext={!!nextUrl} />
 		</SafeAreaView>
 	);
 }

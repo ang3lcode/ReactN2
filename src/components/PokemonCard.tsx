@@ -2,6 +2,8 @@ import { StyleSheet, View, Text, Image, TouchableWithoutFeedback } from 'react-n
 import React from 'react'
 import getColorByPokemonType from '../utils/gerColorByPokemonType';
 import { capitalize } from 'lodash';
+import { useNavigation } from '@react-navigation/native';
+
 
 interface Pokemon {
 	id: number;
@@ -12,16 +14,18 @@ interface Pokemon {
 }
 
 export default function PokemonCard({ pokemon }: { pokemon: Pokemon }) {
-	const { name, type, order, imagen } = pokemon;
+	const { name, type, order, imagen, id } = pokemon;
 	// console.log('pokemon--->', pokemon);
 	// console.log('type--->', type);
+	const navigation = useNavigation();
 	const pokemonColor = getColorByPokemonType(type);
 	// console.log('pokemonColor--->', pokemonColor);
 
 	const bgstyles = { backgroundColor: pokemonColor, ...styles.bgStyles };
 
 	const goToPokemon = () => {
-		console.log(`Vamos al pokemon: ${name}`);
+		console.log(`Vamos al pokemon: ${id}`);
+		navigation.navigate("Pokemon", { id: pokemon.id });
 	}
 
 	return (

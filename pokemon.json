@@ -1,0 +1,95 @@
+{
+   "abilities": [
+      { "ability": {}, "is_hidden": false, "slot": 1 },
+      { "ability": {}, "is_hidden": true, "slot": 3 }
+   ],
+   "base_experience": 39,
+   "cries": {
+      "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/10.ogg",
+      "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/10.ogg"
+   },
+   "forms": [
+      {
+         "name": "caterpie",
+         "url": "https://pokeapi.co/api/v2/pokemon-form/10/"
+      }
+   ],
+   "game_indices": [
+      { "game_index": 123, "version": {} },
+      { "game_index": 123, "version": {} },
+      { "game_index": 123, "version": {} },
+      { "game_index": 10, "version": {} },
+      { "game_index": 10, "version": {} },
+      { "game_index": 10, "version": {} },
+      { "game_index": 10, "version": {} },
+      { "game_index": 10, "version": {} },
+      { "game_index": 10, "version": {} },
+      { "game_index": 10, "version": {} },
+      { "game_index": 10, "version": {} },
+      { "game_index": 10, "version": {} },
+      { "game_index": 10, "version": {} },
+      { "game_index": 10, "version": {} },
+      { "game_index": 10, "version": {} },
+      { "game_index": 10, "version": {} },
+      { "game_index": 10, "version": {} },
+      { "game_index": 10, "version": {} },
+      { "game_index": 10, "version": {} },
+      { "game_index": 10, "version": {} }
+   ],
+   "height": 3,
+   "held_items": [],
+   "id": 10,
+   "is_default": true,
+   "location_area_encounters": "https://pokeapi.co/api/v2/pokemon/10/encounters",
+   "moves": [
+      { "move": {}, "version_group_details": [] },
+      { "move": {}, "version_group_details": [] },
+      { "move": {}, "version_group_details": [] },
+      { "move": {}, "version_group_details": [] },
+      { "move": {}, "version_group_details": [] }
+   ],
+   "name": "caterpie",
+   "order": 14,
+   "past_abilities": [],
+   "past_types": [],
+   "species": {
+      "name": "caterpie",
+      "url": "https://pokeapi.co/api/v2/pokemon-species/10/"
+   },
+   "sprites": {
+      "back_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/10.png",
+      "back_female": null,
+      "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/10.png",
+      "back_shiny_female": null,
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10.png",
+      "front_female": null,
+      "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10.png",
+      "front_shiny_female": null,
+      "other": {
+         "dream_world": {},
+         "home": {},
+         "official-artwork": {},
+         "showdown": {}
+      },
+      "versions": {
+         "generation-i": {},
+         "generation-ii": {},
+         "generation-iii": {},
+         "generation-iv": {},
+         "generation-v": {},
+         "generation-vi": {},
+         "generation-vii": {},
+         "generation-viii": {}
+      }
+   },
+   "stats": [
+      { "base_stat": 45, "effort": 1, "stat": {} },
+      { "base_stat": 30, "effort": 0, "stat": {} },
+      { "base_stat": 35, "effort": 0, "stat": {} },
+      { "base_stat": 20, "effort": 0, "stat": {} },
+      { "base_stat": 20, "effort": 0, "stat": {} },
+      { "base_stat": 45, "effort": 0, "stat": {} }
+   ],
+   "types": [{ "slot": 1, "type": {} }],
+   "weight": 29
+}

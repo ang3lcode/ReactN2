@@ -17,7 +17,7 @@ export default function PokemonCard({ pokemon }: { pokemon: Pokemon }) {
 	const { name, type, order, imagen, id } = pokemon;
 	// console.log('pokemon--->', pokemon);
 	// console.log('type--->', type);
-	const navigation = useNavigation();
+	const navigation = useNavigation<any>();
 	const pokemonColor = getColorByPokemonType(type);
 	// console.log('pokemonColor--->', pokemonColor);
 

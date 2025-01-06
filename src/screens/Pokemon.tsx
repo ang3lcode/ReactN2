@@ -4,6 +4,7 @@ import { getPokemonDetailsApi } from "../api/Pokemon";
 import Header from "../components/Pokemon/Header";
 import Type from "../components/Pokemon/Type";
 import Stats from "../components/Pokemon/Stats";
+import Icon from "react-native-vector-icons/FontAwesome5";
 
 interface Props {
 	route: any;
@@ -31,6 +32,14 @@ export default function Pokemon(props: Props): JSX.Element | null {
 		route: { params },
 	} = props;
 	const [pokemon, setPokemon] = useState<Pokemon | null>(null);
+
+	useEffect(() => {
+		navigation.setOptions({
+			headerRight: () => null,
+			headerLeft: () => <Icon name="arrow-left" color={"#fff"} size={20} style={{ marginLeft: 20 }} onPress={() => console.log("ir atras")} />
+		});
+	}, [navigation, params]);
+
 
 	useEffect(() => {
 		(async () => {

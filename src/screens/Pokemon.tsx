@@ -12,6 +12,7 @@ interface Props {
 
 export default function Pokemon(props: Props): JSX.Element | null {
 
+
 	interface Pokemon {
 		name: string;
 		order: number;

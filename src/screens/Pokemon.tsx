@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { View, Text, ScrollView } from "react-native";
 import { getPokemonDetailsApi } from "../api/Pokemon";
 import Header from "../components/Pokemon/Header";
+import Type from "../components/Pokemon/Type";
 
 interface Props {
 	route: any;
@@ -50,6 +51,7 @@ export default function Pokemon(props: Props): JSX.Element | null {
 				image={pokemon.sprites.other["official-artwork"].front_default}
 				type={pokemon.types[0].type.name}
 			/>
+			<Type types={pokemon.types} />
 		</ScrollView>
 	);
 }
